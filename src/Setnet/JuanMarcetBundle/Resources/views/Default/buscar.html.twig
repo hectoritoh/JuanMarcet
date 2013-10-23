@@ -1,0 +1,60 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+{%  block  slider %}
+{%  endblock   %}
+
+
+
+{%  block  contenido_centrado  %}
+<br/>
+<br/>
+
+<div class="row-fluid"  >
+
+
+    <div class="span8" >
+        
+
+
+
+        <label class=" menu-noticias-jm"> ENCONTRADOS    (  {{ productos | length  }} ) PRODUCTOS </label>
+
+
+
+
+        {%  for i in 0 .. productos | length / 3  %}
+
+         {{  include('SetnetJuanMarcetBundle:Template:item_producto_jm.html.twig' , {'productos': productos | slice( i * 3 , 3  )  } )  }}
+ 
+        {% endfor %}
+        
+        <div class="row-fluid">
+            <div class="span12" style="text-align: center; margin-left: 0px;  padding-bottom: 30px; padding-top: 30px;">
+
+                <a href="#" class="btn btn-navbar" style="color: gray;font-size: 16px;">V e r   M a s   P r o d u c t o s</a>
+            </div>
+            <br/>
+        </div> 
+    </div>
+
+    <div class="span4">
+        <label class="menu-noticias-jm">NOTICIAS</label>
+        <div style="overflow-y: auto; ">
+            
+            {%  for noticia in noticias  %}            
+               {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+            {%  endfor  %}
+            
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<hr style="width: 100%"/> 
+{% endblock %} 

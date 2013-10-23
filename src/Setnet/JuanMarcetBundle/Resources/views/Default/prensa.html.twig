@@ -1,0 +1,92 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+
+{%  block  slider  %}
+{%  endblock   %}
+
+
+
+
+    {% block portada %}
+<div class="row">
+    <div class="portada"   style="background-image:url({{  asset('uploads/banners/banner-prensa.jpg') }});background-size:100% 100%;"  >
+        <div class="container">
+            <div class="recuadro">
+                <ul class="breadcrumb">
+                    <li><a class="bread" href="#">HOME</a> <span class="divider">></span></li>
+                    <li><a class="bread" href="#">PRENSA</a> <span class="divider">></span></li>
+                    <li class="bread" class="active" style="text-decoration: underline;">  <a  style="  color: #EBC55C;"  href="#">   </a> </li>
+                </ul>
+                <h1 class="title"> PRENSA </h1>
+                <h2 class="subtitle" >ULTIMAS NOTICIAS</h2>
+            </div>
+        </div>
+    </div>
+</div>
+     {% endblock %}         
+
+
+
+
+{%  block  contenido_centrado  %}
+ 
+<div class="row-fluid"  >
+
+
+    <div class="span8" >
+        <!-- <label class=" menu-noticias-jm">PRENSA</label> -->
+
+       
+        {%  for contenido in noticias %}
+   
+         
+        <div  >
+
+            <h3  style="color: red; font-family: arial; text-transform: uppercase;" >{{  contenido.titulo }}</h3>
+            <p> {{  contenido.created | date( 'Y-m-d H:i:s' ) }} </p>
+            <p> <img  style="width: 100%;" src="{{  asset('uploads/noticias/' ~ contenido.imagen ) }}" /> </p>
+
+            <p style="color:#7C7C7C;"> {{  contenido.descripcion }} <a  style="color: red;font-weight:bold;" href="{{  path('noticia', {'id_noticia': contenido.id }) }}" >Ver más</a></p>
+
+        </div>
+        <div class="separador"></div>
+        <!-- <hr style="width: 100%;" /> -->
+        
+        {%  endfor  %}
+        
+    </div>
+    
+    
+    
+
+    <div class="span4">
+       <!--  <div style="overflow-y: auto; ">
+
+            {%  for noticia in noticias  %}            
+               {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+            {%  endfor  %}
+
+        </div> -->
+        <!-- BANNERS -->
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<hr style="width: 100%"/> 
+{% endblock %} 

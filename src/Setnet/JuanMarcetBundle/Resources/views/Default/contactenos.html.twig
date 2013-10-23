@@ -1,0 +1,148 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+             {% block slider %} 
+             {% endblock %}
+
+
+
+   
+{% block js %}        
+        {{  parent() }}
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript" src="{{ asset('js/google-maps.js') }}" ></script>
+{% endblock %}
+
+
+
+  {% block portada %}
+<div class="row">
+    <div class="portada"   style="background-image:url({{  asset('uploads/banners/banner-contactenos.jpg') }});background-size:100% 100%;"  >
+        <div class="container">
+            <div class="recuadro">
+                <ul class="breadcrumb">
+                    <li><a class="bread" href="#">HOME</a> <span class="divider">></span></li>
+                    <li><a class="bread" href="#">CONTACTENOS</a> <span class="divider">></span></li>
+                    <li class="bread" class="active" style="text-decoration: underline;">  <a  style="  color: #EBC55C;"  href="#">   </a> </li>
+                </ul>
+                <h1 class="title"> CONTACTENOS </h1>
+                <h2 class="subtitle" ></h2>
+            </div>
+        </div>
+    </div>
+</div>
+     {% endblock %}         
+
+
+
+
+
+{%  block contenido_centrado %}
+
+
+<div class="row" style="margin-left: 20px;">
+    <div class="span12">
+        <!-- <div class="row" style="margin-left: 20px;margin-top: 20px">
+            <label class="titulo-contenido">CONTACTENOS</label>
+        </div>
+ -->
+        <div class="row" style="">
+            <label style="font-family: Arial;
+                   color: #D3D3D3; font-size: 15px" >Seleccione una Ciudad:</label>
+                   <select>
+                       <option>Guayaquil</option>
+                       <option>Pascuales</option>
+                       <option>Samborondon</option>
+                       <option>Duran</option>
+                       <option>Daule</option>
+                   </select>
+                   <select>
+                       <option>Urdesa</option>
+                       <option>Alborada</option>
+                       <option>Garzota</option>
+                       <option>Centro</option>
+                       <option>Mapasingue</option>
+                   </select>
+            </div>
+
+            <div class="row">
+                <div class="span12" style="width: 100%;height: 300px">
+                    <div id="map-canvas" style="width: 100%;height: 300px"></div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="span7">
+                    <div >
+                        <br/>
+                        <br/>
+                        <form class="form-horizontal">
+                            <div class="heading">
+                                <p class="form-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et docia deserunt mollit anim id est laborum.</p>
+                            </div>
+                                <div class="control-group "  style="width: 450px;" >
+                                    <label class="control-label" style="text-align: left;" for="inputNombre">Nombre: <span class="simbolo">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="inputCompanyName" >
+                                </div>
+                            </div>
+                            <div class="control-group"   style="width: 450px;" >
+                                <label class="control-label" style="text-align: left;"  for="inputApellido">Apellido: <span class="simbolo">*</span></label>
+                                <div class="controls">
+                                    <input type="text" id="inputUsername" >
+                                </div>
+                            </div>
+                            <div class="control-group"  style="width: 450px;" >
+                                <label class="control-label" style="text-align: left;"  for="inputEmail">E-mail: <span class="simbolo">*</span></label>
+                                <div class="controls">
+                                    <input type="password" id="inputPassword" >
+                                </div>
+                            </div>
+                            <div class="control-group"  style="width: 450px;" >
+                                <label class="control-label" style="text-align: left;" for="inputMensaje">Mensaje: <span class="simbolo">*</span></label>
+                                <div class="controls" style="margin-left: 230px; " >
+                                    <textarea name="message" id="message" class="input-xlarge span7"  style="width:220px;" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <button type="submit" class="btn btn-large btn-danger offset6" style="font-size: 17px">Enviar</button>
+                            </div>
+
+
+                        </form>	
+                    </div>                     
+                </div>  
+
+                <div class="span4 offset1">
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <label class="text_ubi">Ubicación</label>
+                        <label style="color: graytext">Lorem#101 y Victor Emilio<br /> Estrada condominion upsum, oficina 202</label>
+                    </div>
+                    <div class="row">
+                        <label class="text_ubi">Atención</label>
+                        <label style="color: graytext">Lunes a Viernes: 08h00 a 17h00 <br /> Sábados 10h00 a 17h00</label>
+                    </div>
+                    <div class="row">
+                        <label class="text_ubi">Teléfono</label>
+                        <label style="color: graytext">(+5934) 5019091</label>
+                    </div>
+                    <div class="row">
+                        <label class="text_ubi">E-mail</label>
+                        <label style="color: graytext">loremipsum@jm.com</label>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <br/>
+            <hr style="width: 100%"/>
+
+        </div>
+    </div>
+
+    <hr style="width: 100%"/> 
+{% endblock %}
+

@@ -1,0 +1,32 @@
+Setnet\JuanMarcetBundle\Entity\ProductoImagen:
+  type: entity
+  table: productoimagen
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    url:
+      type: text
+      nullable: true
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+    descripcion:
+      type: text
+      nullable: true
+  manyToOne:
+    producto:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Producto
+      inversedBy: imagenes
+      joinColumns:
+        producto_id:
+          referencedColumnName: id
+          nullable: false

@@ -1,0 +1,27 @@
+<div class="row-fluid ">
+    <div class="span12">
+
+        <div id="myCarousel" class="carousel slide">
+            
+            <ol class="carousel-indicators">
+               {%  for indice in 1 .. banners | length %}                
+                <li data-target="#myCarousel" data-slide-to="{{  indice - 1 }}" class=" {% if loop.first %}  active {% endif %} " ></li>
+               {%  endfor %}
+            </ol>
+            <!-- Carousel items -->
+            
+            <div class="carousel-inner">
+                {%  for banner in banners  %}
+                <div class=" {% if loop.first %}  active {% endif %} item">
+                    <img style="width: 100%;height:452px;" src="{{  asset('uploads/banners/'  ~ banner.imagen ) }}" />
+                </div>
+                {%  endfor %}
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+</div>
+
+

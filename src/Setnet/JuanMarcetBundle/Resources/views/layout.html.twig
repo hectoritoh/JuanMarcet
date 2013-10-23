@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="{{asset( 'css/bootstrap.css' )}}" rel="stylesheet">
+        <link href="{{asset( 'css/bootstrap-responsive.css' )}}" rel="stylesheet">
+        <link href="{{asset( 'css/site.css' )}}" rel="stylesheet">
+        <link href="{{asset( 'css/menu.css' )}}" rel="stylesheet">
+        <link href="{{asset( 'css/juanmarcet.css' )}}" rel="stylesheet">
+        <style type="text/css">
+          .breadcrumb {
+              background-color: #A3A5A5;
+              padding: 8px 0;
+              margin: 0 0 -12px;
+          }
+          .breadcrumb > li {
+              text-shadow: 0 0px 0;
+          }
+          .breadcrumb > li > .divider {
+              color: #EBC55C;
+          }
+          .btn-large {
+            padding: 11px 28px;
+          }
+        </style>
+{% block js %}        
+        <script type="text/javascript" src="{{asset( 'js/jquery.js' )}}" ></script>
+        <script type="text/javascript" src="{{asset( 'js/bootstrap.js' )}}" ></script>
+        <script type="text/javascript" src="{{asset( 'js/script.js' )}}" ></script>
+{% endblock %}
+    </head>
+    <body> 
+        <div class="container-fluid"  style="padding-left: 0px; padding-right: 0px;" >
+             {%  include 'SetnetJuanMarcetBundle::top.html.twig' %}
+           
+                
+             {% block slider %}
+                {%  include 'SetnetJuanMarcetBundle::carrousel.html.twig' %}
+             {% endblock %}           
+
+               
+             {% block portada %}
+              {#         {%  include 'SetnetJuanMarcetBundle::portada.html.twig' %}   #}
+             {% endblock %}           
+
+
+
+{% block contenido%}
+             {% endblock  %}
+
+             <div  class="background"  >
+                <div  class="bg-top" ></div>
+                <div class="container">
+
+                    <div class="row-fluid">
+                        <div class="span12">
+                            {% block contenido_centrado %}
+                            {% endblock  %}
+                        </div>
+                    </div>                
+                </div>
+                <div  class="bg-bot" ></div>
+            </div>
+
+
+
+             {%  include 'SetnetJuanMarcetBundle::footer.html.twig' %}
+        </div>       
+        
+        
+        <script type="text/javascript" >
+            
+
+        var DEFAULT_IMG_URL = "{{  asset('uploads/productos/default.jpg') }}";
+        var IMG_URL = "{{  asset('uploads/productos/') }}";
+
+            $(document).ready(function(){
+                
+                $("#subcategorias-menu").load('{{   path("mostrar_subcategoria_list" , {'id_categoria': 1 }  ) }}');
+                $("#producto-list").load('{{   path("mostrar_productos_list" , {'id_subcategoria': 1 }  ) }}' ,  function(){
+                  validarImagenes();  
+                }  );
+                
+            });
+            
+        </script>
+        
+        
+    </body>
+</html>

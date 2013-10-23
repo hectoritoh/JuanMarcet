@@ -1,0 +1,60 @@
+Setnet\JuanMarcetBundle\Entity\Producto:
+  type: entity
+  table: producto
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      length: 255
+      nullable: true
+    descripcion:
+      type: text
+      nullable: true
+    stock:
+      type: integer
+      nullable: true
+    precio:
+      type: float
+      nullable: true
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+    visitas:
+      type: integer
+      nullable: true
+    grupo:
+      type: integer
+      nullable: true
+    codigo:
+      type: string
+      length: 60
+      nullable: true
+    tags:
+      type: text
+      nullable: true
+    foto:
+      type: string
+      length: 255
+      nullable: true
+  oneToMany:
+    imagenes:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\ProductoImagen
+      mappedBy: producto
+  manyToOne:
+    subcategoria:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Subcategoria
+      inversedBy: producto
+      joinColumns:
+        subcategoria_id:
+          referencedColumnName: id
+          nullable: false

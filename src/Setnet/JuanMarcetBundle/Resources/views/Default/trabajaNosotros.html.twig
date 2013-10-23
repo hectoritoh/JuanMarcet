@@ -1,0 +1,152 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+
+
+
+
+{% form_theme form _self %}
+
+{% block form_row %}
+    <div class="control-group">
+        {{ form_label(form   , null , { 'label_attr': {'class': 'control-label label-left'} }   ) }}         
+         
+        {{ form_errors(form) }}
+            <div  class="controls" >
+        {{ form_widget(form   ) }}
+                    </div>
+    </div>
+{% endblock form_row %}
+
+
+
+{%  block  slider  %}
+{%  endblock   %}
+
+
+
+
+
+
+    {% block portada %}
+<div class="row">
+    <div class="portada"    style="background-image:url({{  asset('uploads/banners/banner-trabaja.jpg') }});background-size:100% 100%;"  >
+        <div class="container">
+            <div class="recuadro">
+                <ul class="breadcrumb">
+                    <li><a class="bread" href="#">HOME</a> <span class="divider">></span></li>
+                    <li><a class="bread" href="#">TRABAJA CON NOSOTROS</a> <span class="divider"></span></li>
+                    <li class="bread" class="active" style="text-decoration: underline;">  <a  style="  color: #EBC55C;"  href="#">   </a> </li>
+                </ul>
+                <h1 class="title"> TRABAJA CON NOSOTROS </h1>
+                <h2 class="subtitle" ></h2>
+            </div>
+        </div>
+    </div>
+</div>
+     {% endblock %}         
+
+
+
+
+
+{%  block  contenido_centrado  %}
+ 
+<div class="row-fluid"  >
+
+
+    <div class="span8" >
+                
+      <div  >
+
+            <h3  style="color: red; font-family: arial;" >DATOS PERSONALES</h3>
+            <p style="color: #AFAFAF; font-weigth:bold;"> Para ingresar por primera vez su hoja de vida llene los siguientes campos: <br />  </p>
+
+            <br/>
+            <br/>
+            <div  class="jm-form" >
+            
+                <form  class="form-horizontal"  action="{{ path('trabaja_con_nosotros') }}" style="margin-right: 40px;"  method="post" {{ form_enctype(form) }}>
+                {{ form_widget(form) }}
+                <div style="color: #AFAFAF; font-weigth:bold;" >
+                    De acuerdo con el CONADIS, se promueve la Inserción Laboral de las personas con discapacidad, para esto se le solicita contestar la siguiente pregunta:
+                    <div style="color: #000;">Tiene algún tipo de discapacidad total o parcial sea física, intelectual, visual, auditiva o de lenguaje?</div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <select  class="float-left"  >
+                            <option>Visual</option>
+                            <option>Motriz</option>
+                            <option>Auditiva</option>
+                        </select>   
+                        <label  class="float-left" for="si"  style="width:40px; padding: 2px;" >Tipo</label>
+
+                        <label  for="no" class="float-left"  style="width:40px; padding: 2px;" >No</label>   
+                        <input  name="no" class="float-left"   type="radio" />      
+
+                        <label  class="float-left" for="si"  style="width:40px; padding: 2px;" >Si</label>
+                        <input name="si" class="float-left"  type="radio" />          
+
+
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                </div>    
+
+
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" style="float: right;border-radius: 0px 0px 0px 0px ; "  class="btn  btn-danger">Enviar</button>
+                        </div>
+                    </div>       
+
+            </form>
+            </div>
+            
+
+            </div>
+        
+        <hr style="width: 100%;" />
+        
+   
+         
+        
+        <hr style="width: 100%;" />
+        
+    
+        
+    </div>
+    
+    
+    
+
+    <div class="span4">
+        <div class="row-fluid"  >
+            <div class="span2" style="width: 100%; padding-left: 0px; left: 288px;"> 
+                <div class="row" style="margin-left: 0px;margin-top: 20px">
+                    <label class="fondo-text">NOTICIAS</label>
+                </div>
+            </div>
+        </div>
+        <!-- <label class="menu-noticias-jm">NOTICIAS</label> -->
+        <div style="overflow-y: auto; ">
+
+            {%  for noticia in noticias  %}            
+               {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+            {%  endfor  %}
+
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img style="width:100%;" src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<hr style="width: 100%"/> 
+{% endblock %} 

@@ -1,0 +1,32 @@
+Setnet\JuanMarcetBundle\Entity\Categoria:
+  type: entity
+  table: categoria
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      length: 255
+      nullable: true
+    imagen:
+      type: text
+      nullable: true
+    descripcion:
+      type: text
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+  oneToMany:
+    subcategorias:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Subcategoria
+      mappedBy: categorias

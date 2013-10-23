@@ -1,0 +1,111 @@
+.menu-noticias-jm{
+    padding: 10px 0px 10px 0px;
+    color: #D3D3D3;
+    font-family: bebas_neueregular !important;  
+    font-size: 35px;
+}
+
+
+.label_subtitulo_noticias_jm{
+    /*font-family: bebas_neueregular !important; */ 
+    font-family: arial; 
+    color: #888888;
+    /*color: #EE2E24 !important;*/
+    font-size: 20px;
+    text-decoration: none !important;
+    margin: 0px;
+}
+.menu-noticias-jm{
+    padding: 10px 0px 10px 0px;
+    color: white;
+    font-family: brandon;
+    font-size: 35px;
+    background-color: #666666;
+}
+
+
+/*.label_subtitulo_noticias_jm{
+    font-family: bebas_neueregular !important;  
+    color: #EE2E24 !important;
+    font-size: 20px;
+    text-decoration: none !important;
+    margin: 0px;
+}
+*/
+ .label_subtitulo{
+    font-family: bebas_neueregular !important;  
+     color: #333333 !important;
+ font-size: 20px;
+ padding-top: 5px;
+ text-decoration: none !important;
+ width: 100% !important;
+ } 
+ 
+ .label_subtitulo-arial{
+    font-family: Arial !important;  
+     color: #333333 !important;
+ font-size: 18px;
+ font-weight: bold;
+ padding-top: 5px;
+ text-decoration: none !important;
+ width: 100% !important;
+ } 
+ 
+ 
+.estilo_cantidad{
+    padding: 5px;border-radius:3px; -moz-border-radius:3px;-webkit-border-radius:3px;background-color: #EFEFEF;border:1px solid #D3D3D3;
+}
+
+.menu-productos{
+  color: #000;
+  font-family: bebas_neueregular !important;  
+  font-size: 20px;
+}
+
+.boton-agregar-carrito{
+    background: #1B3F95 !important; 
+    color: #CCCCCC;
+    font-family: bebas_neueregular !important;
+    font-size: 14px; 
+    width: 100%;padding: 10px 1px;
+}
+
+/*.navbar .nav > li{
+    padding: 0 10px 0 10px;
+}*/
+
+.navbar .nav > li > a {
+    float: none;    
+    padding: 5px 0px 5px 0px;
+    
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.link_contenido{
+    color: blue !important;
+    background-color: transparent !important;
+    text-decoration: underline !important;
+}
+
+.titulo-contenido{
+    color: #666666;
+    font-family: bebas_neueregular;
+    font-size: 32px;
+}
+
+.label_iva{
+    font-size: 15px !important;text-align:left;color: black !important;font-weight: bold;font-family: Arial !important;width: 45%;float: left;padding-left:10px;
+    padding-top: 2px;
+}
+
+.subtitulo-breadcrumb{
+    color: #D3D3D3;
+    font-family: bebas_neueregular;
+    font-size: 20px;
+}
+.subtitulo-breadcrumb-act{
+    color: #666666;
+    font-family: bebas_neueregular;
+    font-size: 20px;
+}

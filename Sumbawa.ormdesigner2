@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<orm-designer version="2.1.12.719" name="sumbawa" mvc="Symfony2" orm="Doctrine2" uuid="7511e2db-cb19-4f16-a1be-9f9d8a478540">
+  <module name="JuanMarcet" import-format="Doctrine2Yml" import-path="src/Setnet/JuanMarcetBundle/Resources/config/doctrine" uuid="80204472-8517-45c6-bbb8-86dc7f55d588">
+    <entity name="TrabajaConNosotros" uuid="df0647c4-7603-40fd-88e0-d552fdc85399">
+      <field name="id" type="integer" required="true" primary="true" auto-increment="true" uuid="ae359d73-ca9c-4e10-9ec0-6d572a696f4c"/>
+      <field name="cedula" type="string" size="10" required="true" uuid="c93ccae9-ee73-43b4-bb66-cc5217979ba2"/>
+      <field name="apellidos" type="string" size="50" required="true" uuid="cfd84d28-e8b4-435d-b3cb-87fc90a265d0"/>
+      <field name="nombres" type="string" size="50" required="true" uuid="70c3df7c-5ee4-4449-83d0-31b540da97dc"/>
+      <field name="nacimiento" type="datetime" required="true" uuid="c6925a45-78f6-432d-a523-322be4f2c60b"/>
+      <field name="genero" type="string" size="1" required="true" uuid="65fa569b-761f-4ae3-aa2a-2f9cdb62aff4"/>
+      <field name="nacionalidad" type="string" size="1" required="true" uuid="85ae6544-cb28-41b9-9a9e-930188f1d8cc"/>
+      <field name="direccion" type="text" required="true" uuid="06d4d0a4-dab5-44f8-b048-b29614907a68"/>
+      <field name="celular" type="string" size="12" required="true" uuid="3e3791d6-034b-4a16-be0d-d1e69a571e79"/>
+      <field name="fijo" type="string" size="12" required="true" uuid="30921547-ce6d-4781-873d-24303655dc9b"/>
+      <field name="email" type="string" size="30" required="true" uuid="54b29dc6-7cc1-4827-949d-19c6d9d7fb0f"/>
+      <field name="areaAplica" type="string" size="20" required="true" uuid="e1670762-dec1-4699-ac10-bdc75c6db071"/>
+      <field name="nivelAplica" type="string" size="30" required="true" uuid="bae0afc7-ec39-49b5-883e-73741b99bab3"/>
+      <field name="estadoCivil" type="string" size="1" required="true" uuid="30a8e1dc-3b3b-40ef-a0c0-4cea3ae6acb3"/>
+      <field name="contactoEmergencia" type="string" size="20" required="true" uuid="136ae006-628f-40de-9021-03c9a7d0599e"/>
+      <field name="telelfonoEmergencia" type="string" size="20" required="true" uuid="c2526c8b-4b84-4c4e-9fb4-bb8edec65b74"/>
+      <field name="estado" type="integer" required="true" uuid="e4615570-e67c-4495-a289-9045ec78edac"/>
+    </entity>
+    <entity name="Contactenos" uuid="63f50703-aea1-41ac-8408-318ec71e08f6">
+      <field name="id" primary="true" auto-increment="true" uuid="2a2e582d-fa78-4879-b991-022584cb89fb"/>
+      <field name="nombre" type="string" uuid="8f96480d-bb45-457f-a06f-b572b33dec5f"/>
+      <field name="apellidos" type="string" uuid="2cd539e9-76a6-4a4f-a8ee-2e6b291cfe9b"/>
+      <field name="email" type="string" uuid="a601236b-aec5-4a73-9a85-8c21cbca7243"/>
+      <field name="mensaje" type="text" uuid="26b2a3d8-0f2d-4cde-82fa-61a5a3d30ec3"/>
+      <field name="estado" uuid="b3f176ef-eb22-4ce8-99ab-26d41c8c5f49"/>
+      <field name="referencia" type="string" size="30" uuid="22dbf3a6-13cd-4107-a557-6e9e5569cdcc"/>
+    </entity>
+    <entity name="Subcategoria" uuid="f4fdd509-4bc9-4497-8e0d-520121c31878">
+      <field name="id" type="integer" required="true" primary="true" auto-increment="true" uuid="ddbf5374-d9b5-403c-bcfa-9eff2bf79713"/>
+      <field name="nombre" type="string" size="255" required="true" uuid="37fb24d2-cfcb-4851-9b13-7ed9bbcb9cb1"/>
+      <field name="imagen" type="text" uuid="cbabb167-260e-44dc-88c7-7155c9ba827e"/>
+      <field name="descripcion" type="text" uuid="68e7b4d2-4f95-4888-b6a0-47ec9f8c4e39"/>
+      <field name="estado" type="integer" uuid="ac1fb8a9-42a8-4c30-aff6-db91ddb943da"/>
+      <field name="created" type="datetime" uuid="6dd125da-cd97-4cc6-8621-2d42a569a2c9"/>
+      <field name="updated" type="datetime" uuid="428a12df-f690-4906-947c-0b3f3e96a290"/>
+      <field name="categoria_id" type="integer" required="true" uuid="82b0ebbb-7ef5-4210-8ba2-2658a41144d3"/>
+    </entity>
+    <association from="Subcategoria" to="Categoria" caption="Subcategoria (NULL)" owner-alias="subcategorias" inverse-alias="categorias" uuid="1509a0fe-eb1d-41ae-8963-ddd476d4c80f">
+      <association-field from="categoria_id" to="id"/>
+    </association>
+    <entity name="Producto" uuid="6dffd5f1-0742-4eef-897c-be9eb814d9b8">
+      <field name="id" type="integer" required="true" primary="true" auto-increment="true" uuid="af869942-e2be-45b6-8d1e-0ef2d5749d7a"/>
+      <field name="nombre" type="string" size="255" uuid="bdc1bec2-51d8-4454-9d9d-7b3a5bde2d39"/>
+      <field name="descripcion" type="text" uuid="3cbed210-ad11-4d39-9bef-909582c08b1f"/>
+      <field name="stock" type="integer" default="0" uuid="8215296c-fbff-40fb-9bd3-650b4eddc109"/>
+      <field name="precio" type="float" uuid="4b4a0a75-9119-488b-b16a-2370fb3785e2"/>
+      <field name="created" type="datetime" uuid="28836fbb-c0a8-40d7-a3e1-a5b8d2a0a049"/>
+      <field name="updated" type="datetime" uuid="680a218f-e581-432d-ae85-f68bd571c360"/>
+      <field name="estado" type="integer" uuid="1668bbf9-474a-434a-ad7e-9c46adbee117"/>
+      <field name="subcategoria_id" type="integer" required="true" uuid="42eb1bf6-11f7-45a9-a2ea-609aa0353df5"/>
+      <field name="visitas" type="integer" default="0" uuid="b8d08063-ea10-4464-80d0-2e3f520b78d4"/>
+      <field name="grupo" type="integer" uuid="1c1342ab-7de3-47fb-9167-4ff7abeb5d39"/>
+      <field name="codigo" type="string" size="60" uuid="b20df1f2-a693-4dbb-b1db-07de395aaa22"/>
+      <field name="tags" type="text" uuid="8de0038e-9599-47ae-b55d-8728643b96bf"/>
+      <field name="foto" type="string" size="255" uuid="c52dfd4a-512f-4803-b417-7fe613305c03"/>
+    </entity>
+    <association from="Producto" to="Subcategoria" caption="Producto (NULL)" owner-alias="producto" inverse-alias="subcategoria" uuid="1073191c-c0e3-4f43-b753-f892f1d9f48d">
+      <association-field from="subcategoria_id" to="id"/>
+    </association>
+    <entity name="ProductoImagen" uuid="47d4a1ed-0823-4f49-b1ac-b204a95555bf">
+      <field name="id" type="integer" required="true" primary="true" auto-increment="true" uuid="55b4d222-5181-402a-9e91-1a9b044b39b0"/>
+      <field name="url" type="text" uuid="a2763103-f9ed-4151-b196-6ce91ed9ab74"/>
+      <field name="created" type="datetime" uuid="7ddcd671-e6f5-4148-b61e-76d4b7e9d207"/>
+      <field name="updated" type="datetime" uuid="f0665b0c-5867-4737-a34c-394ec13a61e5"/>
+      <field name="estado" type="integer" uuid="ed0dc44a-8245-4590-aba3-05cb99b6a406"/>
+      <field name="descripcion" type="text" uuid="ad0ef71e-2510-460e-8e70-9b5c9ab7a591"/>
+      <field name="producto_id" type="integer" required="true" uuid="6ee9a1cd-8653-4039-b7a1-e01d2602aefa"/>
+    </entity>
+    <association from="ProductoImagen" to="Producto" caption="ProductoImagen (NULL)" owner-alias="imagenes" inverse-alias="producto" uuid="d511e364-f87a-448d-afec-a5d7b89e5ccf">
+      <association-field from="producto_id" to="id"/>
+    </association>
+    <entity name="Banner" uuid="a202912d-1933-4bd0-9690-7993ba7a6576">
+      <field name="id" type="integer" required="true" primary="true" auto-increment="true" uuid="9488f04f-c652-4fad-b887-dd6515cf4b3a"/>
+      <field name="imagen" type="text" uuid="4ba6ccfc-d5da-4fe2-ac9b-979d141a4d4e"/>
+      <field name="descripcion" type="text" uuid="5596ca31-3258-4976-86bd-c75ae897df0c"/>
+      <field name="titulo" type="string" size="255" uuid="8a267655-e9e9-42d1-ba93-1b39b0c6fe63"/>
+      <field name="link" type="string" size="255" uuid="8f78d9c9-c39f-44a4-818b-c200e64ab6e5"/>
+      <field name="estado" type="integer" uuid="46ab81fe-2d68-484a-9fb0-5609716a4008"/>
+      <field name="created" type="datetime" uuid="54e0444d-1d9a-4713-ad3a-b50378585b06"/>
+      <field name="updated" type="datetime" auto-increment="true" uuid="793bd752-88cb-4840-97bb-559a2521f8d5"/>
+      <field name="tipo" type="string" size="50" uuid="81ff1668-000a-4481-ad66-225fa9714daa"/>
+    </entity>
+    <entity name="Noticias" uuid="ab5a5357-9982-43e3-8189-d47fe230beb1">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="a8db1926-91af-46da-bc18-ed5104b73618"/>
+      <field name="titulo" type="string" size="255" uuid="74f00576-ec4f-467d-ac9f-0c8d4d630237"/>
+      <field name="descripcion" type="text" uuid="46b11a54-9ec8-4883-9cb4-8230592897aa"/>
+      <field name="created" type="datetime" uuid="15720d6d-5881-470b-838e-dc2139905b3a"/>
+      <field name="updated" type="datetime" uuid="7534fc51-5704-44a0-b5db-50fa6fea858e"/>
+      <field name="estado" type="integer" uuid="fcbf907d-0388-4c4d-8c26-7cd5711e81a0"/>
+      <field name="imagen" type="text" uuid="5b0262ca-1dce-4e62-a680-aa3394d59708"/>
+      <field name="peso" type="integer" uuid="0bf839ad-4081-49d5-b5a3-94027d722721"/>
+    </entity>
+    <entity name="Contenido" uuid="6696984f-0a66-49c8-b8eb-29979fb751d4">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="3ccaee05-7b7c-459b-9aa0-e0b6ec12142e"/>
+      <field name="titulo" type="string" size="255" uuid="84f639c1-6669-47ce-9bb7-8c047a467394"/>
+      <field name="contenido" type="text" uuid="5951e86c-ef61-4afb-9f5d-9b4d5234599c"/>
+      <field name="estado" type="integer" uuid="a3cf4f0a-e168-4060-8321-5ac5df1a8f7e"/>
+      <field name="created" type="datetime" uuid="6f20563e-a606-4ff3-9ee4-71cfbfda64b1"/>
+      <field name="updated" type="datetime" uuid="ecb33165-09cc-4ad9-9308-fb3b5d5d229d"/>
+      <field name="categoria" type="string" size="100" uuid="f6f1ad9a-63ca-4b12-b095-e80dc5d04932"/>
+    </entity>
+    <entity name="DetalleEnvio" uuid="134874d5-c417-46df-996e-87fd20710767">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="e2d2ddf8-8de4-4bcf-ae5e-1565dd2edeb2"/>
+      <field name="nombre" type="string" size="255" uuid="2f32166d-1eb9-457b-a2a1-fc977a612d78"/>
+      <field name="calle" type="string" size="255" auto-increment="true" uuid="c4f46a03-7d64-40aa-b5f7-eda1d678a5bb"/>
+      <field name="departamento" type="string" size="255" uuid="1626daf4-3658-45b0-99a2-5b5b48c1a8f5"/>
+      <field name="ciudad" type="string" size="100" uuid="58789218-47b3-4668-9192-3e4eb684b937"/>
+      <field name="provincia" type="string" size="100" uuid="6adba7bb-c8cc-4613-84f0-e9d8cf95e167"/>
+      <field name="region" type="string" size="100" uuid="8e090443-4864-45ae-98e5-97d813257c66"/>
+      <field name="codigo_postal" type="string" size="100" uuid="a5eea738-2917-47b7-aca7-f588ad4af8e4"/>
+    </entity>
+    <entity name="DetallePago" uuid="b6a3f347-2b9d-4495-8451-733d5eceb650">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="999f25d9-40f3-4dc8-ac83-5299fdc72de2"/>
+      <field name="nombre_tarjeta" type="string" size="255" uuid="52a27027-f660-4558-8fbb-da40ed52ea7d"/>
+      <field name="ccv" type="string" size="255" uuid="25146982-abb4-4510-aaa2-d28cc8c007be"/>
+      <field name="mes_vence" type="string" size="20" uuid="554f098c-3c2a-40cb-9fe6-b76bfb5642bf"/>
+      <field name="anio_vence" type="string" size="20" uuid="a7067b21-b251-4b5d-9672-4569eaaa2fe6"/>
+      <field name="numero_tarjeta" type="string" size="50" uuid="f673179a-a75a-43f1-8bdd-b6ddef3a0615"/>
+      <field name="estado" type="integer" uuid="76a025ab-13d6-4d20-a3f3-5fd270562452"/>
+      <field name="created" type="datetime" uuid="88371993-794f-4dee-9a94-30f6ec6ed67c"/>
+      <field name="updated" type="datetime" uuid="f57290bc-2e85-4dc8-a3a7-04d0c535ff67"/>
+    </entity>
+    <entity name="Compra" uuid="aa25c7ec-ddc5-4c5d-9c12-3e2a43a16784">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="fc152ad4-1487-4e02-a5c6-d35182f518c9"/>
+      <field name="created" type="datetime" uuid="ace5d9c8-f8d3-4ca6-b093-ab80bbefdb03"/>
+      <field name="updated" type="datetime" uuid="c699d677-5891-493e-bf20-b122c0ef3554"/>
+      <field name="estado" type="integer" uuid="c0dbe661-2206-4bd9-aadb-3b1ecc84c2ea"/>
+      <field name="detalle_envio_id" type="integer" required="true" unique="true" uuid="c8b056d2-14b5-4384-8b88-ef40fefad427"/>
+      <field name="detalle_pago_id" type="integer" required="true" unique="true" uuid="19de48fe-1b58-4eb1-860b-41d07edbb887"/>
+      <field name="usuario_id" type="integer" required="true" uuid="d2ece5f6-5f4d-4823-ae85-0aa899999305"/>
+    </entity>
+    <association from="Compra" to="DetalleEnvio" caption="compra (NULL)" owner-alias="compra" inverse-alias="detalleEnvio" uuid="986a4bf8-be6f-403c-a7d9-fa0109d58c43">
+      <association-field from="detalle_envio_id" to="id"/>
+    </association>
+    <association from="Compra" to="DetallePago" caption="compra (NULL)" owner-alias="compra" inverse-alias="detallePago" uuid="d3b1fb2d-f328-4f2c-b24d-da0df450bb1e">
+      <association-field from="detalle_pago_id" to="id"/>
+    </association>
+    <association from="Compra" to="Usuario" caption="compra (NULL)" owner-alias="compra" inverse-alias="usuario" uuid="e6d1ce48-1ce1-4f08-b44e-3e239b363779">
+      <association-field from="usuario_id" to="id"/>
+    </association>
+    <entity name="Tienda" uuid="5e519b41-affb-4f25-a178-e5ac39f8bf67">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="0972cc01-3951-41c8-a5cd-d7ed38971c46"/>
+      <field name="nombre" type="string" size="255" uuid="9414641f-69cb-4e7e-81db-6b69d6569fca"/>
+      <field name="direccion" type="string" size="255" uuid="fe9ee977-a8f8-4be9-ab84-953743548c80"/>
+      <field name="telefono" type="string" size="255" uuid="1b95355c-f74e-48f0-8159-5c8d0514a1fb"/>
+      <field name="email" type="string" size="255" uuid="f1cb1d05-6841-44c7-a499-84156c31426b"/>
+      <field name="atencion" type="string" size="255" uuid="5b7d284b-6b38-4e7b-95b3-ca553fe16681"/>
+      <field name="created" type="datetime" uuid="dcbfcd2b-f138-4fb7-b053-5d2c30afe915"/>
+      <field name="updated" type="datetime" uuid="aef05eba-23d3-4e05-bfe0-e1e773659428"/>
+      <field name="estado" type="integer" uuid="99e34037-1126-4c4f-86fd-32effcd88371"/>
+      <field name="latitud" type="string" size="255" uuid="8771cd9f-e02e-433d-8f10-5f899fb56198"/>
+      <field name="longuitud" type="string" size="255" uuid="c2ac41cf-8e02-4780-8e1f-9135cf0ffaaa"/>
+    </entity>
+    <entity name="Imagenes" uuid="031335ba-6fcd-4787-98e0-9d9f66c51005">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="1cb6ca49-4358-4dbe-9d10-f78969275a6e"/>
+      <field name="titulo" type="string" size="255" uuid="1211925c-a9a7-4c24-9bbd-3026ca5251df"/>
+      <field name="descripcion" type="text" uuid="8d8c962a-89f1-41ee-9c9e-d0e46101b3d1"/>
+      <field name="created" type="datetime" uuid="c9fe9944-6686-4ee3-9a95-70a5c08ca7be"/>
+      <field name="updated" type="datetime" uuid="9ca4b828-7dc5-4028-a952-e210ad91daaf"/>
+      <field name="estado" type="integer" uuid="dbb3be40-b84e-42ab-a5dd-6b6c39f87182"/>
+      <field name="multimedia_id" type="integer" required="true" uuid="0754958a-bc85-4d56-ba1d-d61dd28fefa8"/>
+    </entity>
+    <association from="Imagenes" to="Multimedia" caption="Imagenes (NULL)" owner-alias="imagenes" inverse-alias="multimedia" uuid="4cb8d8ba-058f-4e89-8263-657d25ce5957">
+      <association-field from="multimedia_id" to="id"/>
+    </association>
+    <entity name="Multimedia" uuid="3ef4474f-2f27-45ba-a4cf-6dbfffa4f352">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="204c9ceb-76be-4f13-b484-26cfa6960b03"/>
+      <field name="tipo" type="string" size="10" uuid="6cd3730f-8138-4fe2-b444-85ad1401d3d5"/>
+      <field name="url" type="text" uuid="af2bb6e8-3ae3-4218-be64-6dea6d815096"/>
+      <field name="descripcion" type="text" uuid="569dfbab-300a-4f36-997f-ec6d6d1d2c97"/>
+      <field name="estado" type="integer" uuid="6af681e3-f877-417a-a5d3-8c7821daf0dc"/>
+      <field name="created" type="datetime" uuid="6a722eaa-e339-4235-9204-2d559e0ebc0c"/>
+      <field name="updated" type="datetime" uuid="13baae44-6be2-4f45-80d4-2d218538ccbe"/>
+    </entity>
+    <entity name="Videos" uuid="7b07e6e0-d5b0-42be-8284-aa212ae9d0c1">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="512ca1c1-3392-472c-9263-14d46deb4741"/>
+      <field name="titulo" type="string" size="255" uuid="ab78e607-49cf-4ece-8e56-88252d1c6cd2"/>
+      <field name="descripcion" type="text" uuid="b27b2592-b0f8-4f71-807b-67478a56cddf"/>
+      <field name="created" type="datetime" uuid="0dcda5d7-1729-44db-b121-24235f612353"/>
+      <field name="updated" type="datetime" uuid="fc3a98c9-c7b8-4f78-bf1e-4f8f24a5f2e2"/>
+      <field name="estado" type="integer" uuid="20fcb6bd-2c9d-4283-b962-644d83166e0c"/>
+      <field name="multimedia_id" type="integer" required="true" uuid="4bedddf6-6faa-4928-8401-f870931d5e4e"/>
+    </entity>
+    <association from="Videos" to="Multimedia" caption="Videos (NULL)" owner-alias="videos" inverse-alias="multimedia" uuid="d9ae9e14-c907-4473-9265-74796cb9826d">
+      <association-field from="multimedia_id" to="id"/>
+    </association>
+    <entity name="Personal" uuid="7ee8c5e3-209c-48a4-8c49-fd11bbffc655">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="974accd9-c81d-4679-b930-4302670eadf2"/>
+      <field name="nombre" type="string" uuid="bc7a2f5e-bd6d-4f79-9d36-afbc61090010"/>
+      <field name="estatura" type="float" uuid="f2c45046-ac9c-498a-9184-b71b3125a2e7"/>
+      <field name="sponsor" type="string" size="255" uuid="88f126ab-bcb0-40b2-8d47-ea779aa7a6fe"/>
+      <field name="anecdota" type="text" uuid="1441b528-4939-4c3f-8de5-e54c4089add8"/>
+      <field name="edad" type="integer" uuid="cf91c679-f434-4384-b9f8-f202565100bc"/>
+      <field name="extra1" uuid="12b70700-b1de-4015-bb59-b1db177d4eae"/>
+      <field name="extra2" uuid="c39f7a2a-6dfb-4f89-9b08-25977461478e"/>
+    </entity>
+    <entity name="Entrevista" uuid="2bb197e2-8ea2-4123-9d10-6e0e66fbf0d4">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="841006bf-cfd7-4240-9831-9ea517dbd22f"/>
+      <field name="pregunta" type="text" uuid="8e512ba4-aaa6-48a0-8e7a-e35706b15f3b"/>
+      <field name="respuesta" type="text" uuid="5bd9b7f9-ea8c-46ea-8ad8-c11248df8b58"/>
+      <field name="estado" type="integer" uuid="4c5c4c24-3f31-4553-a382-2da1c89a7e84"/>
+      <field name="created" uuid="e0aed482-36f7-4a42-9cc8-ccbee0c7c923"/>
+      <field name="updated" uuid="3e6df8fa-7c71-4dff-abe5-ee8400335681"/>
+      <field name="personal_id" type="integer" required="true" uuid="0f4337fd-3e0b-46ce-8645-ce79e9fd0db2"/>
+    </entity>
+    <association from="Entrevista" to="Personal" caption="Entrevista (NULL)" owner-alias="entrevista" inverse-alias="persona" uuid="a9cad717-c364-4ea4-9b31-e8570fbaed8f">
+      <association-field from="personal_id" to="id"/>
+    </association>
+    <entity name="Usuario" uuid="a88bf342-f58c-4f38-82ff-81cd24cb7781">
+      <field name="id" type="integer" primary="true" auto-increment="true" uuid="4570b24f-69bb-4ce4-82f6-05cac5493fdf"/>
+      <field name="nombre" type="string" size="255" uuid="78b2f092-cb7c-42d0-a619-6b6c161db4fa"/>
+      <field name="apellido" type="string" size="255" uuid="2876588c-f036-49ac-9b85-ee966e433fa6"/>
+      <field name="genero" type="integer" uuid="7e6d2426-ac16-49c8-9167-f083c8a194ad"/>
+      <field name="email" type="string" size="100" uuid="3a6fb8fe-ae31-484a-a261-e00c76ec6267"/>
+      <field name="usuario" type="string" size="50" uuid="1dc76937-c0f8-44b7-97b2-d566ccb292c7"/>
+      <field name="password" type="string" size="50" uuid="dd327244-5a40-4d4c-847a-f211d7d0a21d"/>
+      <field name="estado" type="integer" uuid="6c8a29e7-5b1c-42fa-9259-339ec409f09f"/>
+      <field name="created" type="datetime" uuid="5537fe3c-3dd6-4b52-86bb-601860bf612d"/>
+      <field name="updated" type="datetime" uuid="aabaddf1-9a1c-4920-8a9e-144a2f423d5d"/>
+    </entity>
+    <entity name="Categoria" description="categorias de la aplicacion" uuid="a3cec51c-89fa-4a6f-b834-a6a9ab665d15">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="2e4e5a34-b5f3-44b3-8029-ad1420143198"/>
+      <field name="nombre" type="string" size="255" uuid="d9688fec-c3cb-4caa-90a6-867a04079874"/>
+      <field name="imagen" type="text" uuid="dc9e46cb-a0d0-4a56-aa66-c460a57f3716"/>
+      <field name="descripcion" type="text" uuid="f07005c3-d2ad-4c8d-9f94-b85cec3f65ca"/>
+      <field name="estado" type="integer" uuid="cacf8b40-a0ad-49be-8e47-6da19a27b4a7"/>
+      <field name="created" type="datetime" uuid="534d3a65-262b-4d91-b0e1-66582616613f"/>
+      <field name="updated" type="datetime" uuid="0c0da00e-d0e1-4cb4-9c37-4e2e7cbe2f22"/>
+    </entity>
+    <orm-attributes>
+      <attribute name="namespace">Setnet\JuanMarcetBundle\Entity</attribute>
+      <attribute name="file-suffix">.orm</attribute>
+      <attribute name="filename-format">entity-name-only</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="031335ba-6fcd-4787-98e0-9d9f66c51005" position-x="977" position-y="258" size-x="0" size-x2="119" size-y="0" size-y2="115"/>
+    <entity uuid="134874d5-c417-46df-996e-87fd20710767" position-x="445" position-y="128" size-x="0" size-x2="135" size-y="0" size-y2="129"/>
+    <entity uuid="2bb197e2-8ea2-4123-9d10-6e0e66fbf0d4" position-x="1100" position-y="485" size-x="0" size-x2="109" size-y="0" size-y2="115"/>
+    <entity uuid="3ef4474f-2f27-45ba-a4cf-6dbfffa4f352" position-x="1335" position-y="348" size-x="0" size-x2="103" size-y="0" size-y2="115"/>
+    <entity uuid="47d4a1ed-0823-4f49-b1ac-b204a95555bf" position-x="423" position-y="-53" size-x="0" size-x2="110" size-y="0" size-y2="115"/>
+    <entity uuid="5e519b41-affb-4f25-a178-e5ac39f8bf67" position-x="990" position-y="-10" size-x="0" size-x2="115" size-y="0" size-y2="171"/>
+    <entity uuid="63f50703-aea1-41ac-8408-318ec71e08f6" position-x="208" position-y="550" size-x="0" size-x2="115" size-y="0" size-y2="115"/>
+    <entity uuid="6696984f-0a66-49c8-b8eb-29979fb751d4" position-x="594" position-y="-50" size-x="0" size-x2="116" size-y="0" size-y2="115"/>
+    <entity uuid="6dffd5f1-0742-4eef-897c-be9eb814d9b8" position-x="145" position-y="-29" size-x="0" size-x2="127" size-y="0" size-y2="157"/>
+    <project uuid="7511e2db-cb19-4f16-a1be-9f9d8a478540" size-x="0" size-x2="1721" size-y="51" size-y2="763"/>
+    <entity uuid="7b07e6e0-d5b0-42be-8284-aa212ae9d0c1" position-x="1290" position-y="20" size-x="0" size-x2="119" size-y="0" size-y2="115"/>
+    <entity uuid="7ee8c5e3-209c-48a4-8c49-fd11bbffc655" position-x="712" position-y="461" size-x="0" size-x2="111" size-y="0" size-y2="129"/>
+    <module uuid="80204472-8517-45c6-bbb8-86dc7f55d588" bk-color="4294375930" position-x="61" position-y="72" size-x="11" size-x2="1610" size-y="73" size-y2="641"/>
+    <entity uuid="a202912d-1933-4bd0-9690-7993ba7a6576" position-x="807" position-y="194" size-x="0" size-x2="103" size-y="0" size-y2="129"/>
+    <entity uuid="a3cec51c-89fa-4a6f-b834-a6a9ab665d15" position-x="10" position-y="20"/>
+    <entity uuid="a88bf342-f58c-4f38-82ff-81cd24cb7781" position-x="1478" position-y="18" size-x="0" size-x2="112" size-y="0" size-y2="157"/>
+    <entity uuid="aa25c7ec-ddc5-4c5d-9c12-3e2a43a16784" position-x="288" position-y="305" size-x="0" size-x2="129" size-y="0" size-y2="115"/>
+    <entity uuid="ab5a5357-9982-43e3-8189-d47fe230beb1" position-x="783" position-y="-54" size-x="0" size-x2="103" size-y="0" size-y2="129"/>
+    <entity uuid="b6a3f347-2b9d-4495-8451-733d5eceb650" position-x="648" position-y="279" size-x="0" size-x2="140" size-y="0" size-y2="143"/>
+    <association uuid="d511e364-f87a-448d-afec-a5d7b89e5ccf" caption1-position-x="-7" caption1-position-y="-47" center-position-x="0" center-position-y="0"/>
+    <entity uuid="df0647c4-7603-40fd-88e0-d552fdc85399" position-x="424" position-y="544" size-x="0" size-x2="20" size-y="0" size-y2="20"/>
+    <entity uuid="f4fdd509-4bc9-4497-8e0d-520121c31878" position-x="85" position-y="361" size-x="0" size-x2="112" size-y="0" size-y2="129"/>
+  </visual-data>
+</orm-designer>

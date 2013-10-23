@@ -1,0 +1,41 @@
+Setnet\JuanMarcetBundle\Entity\DetallePago:
+  type: entity
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre_tarjeta:
+      type: string
+      length: 255
+      nullable: true
+    ccv:
+      type: string
+      length: 255
+      nullable: true
+    mes_vence:
+      type: string
+      length: 20
+      nullable: true
+    anio_vence:
+      type: string
+      length: 20
+      nullable: true
+    numero_tarjeta:
+      type: string
+      length: 50
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+  oneToOne:
+    compra:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Compra
+      mappedBy: detallePago

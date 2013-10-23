@@ -1,0 +1,76 @@
+home:
+    pattern:  /index
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:index }
+
+categoria:
+    pattern:  /categoria/{id_categoria}
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:categoria }
+
+
+subcategoria:
+    pattern:  /subcategoria/{id}
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:subcategoria }
+
+
+cesta:
+    pattern:  /cesta
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:cesta }
+
+descripcion_producto:
+    pattern:  /producto/{id}
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:descripcion }
+
+busqueda:
+    pattern:  /buscar
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:buscar }
+
+
+agregar:
+    pattern:  /add/{id_producto}
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:agregar }
+
+
+#SECCION DE INFORMACION DE LA PAGINA 
+
+about:
+    pattern:  /about
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:about }
+
+tienda:
+    pattern:  /tienda
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:tienda }
+
+prensa:
+    pattern:  /prensa
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:prensa }
+
+noticia:
+    pattern:  /noticia/{id_noticia}
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:noticia }
+
+
+preguntas:
+    pattern:  /preguntas
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:preguntas }
+
+
+trabaja_con_nosotros:
+    pattern:  /trabaja-con-nosotros
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:trabajaNosotros }
+
+
+contactenos:
+    pattern:  /contactenos
+    defaults: { _controller: SetnetJuanMarcetBundle:Default:contactenos }
+
+
+
+#ajax
+
+mostrar_subcategoria_list:
+    pattern:  /mostrarSubcategoria/{id_categoria}
+    defaults: { _controller: SetnetJuanMarcetBundle:Menu:mostrarSubcategorias , id_categoria: null }
+    
+mostrar_productos_list:
+    pattern:  /mostrarProductos/{id_subcategoria}
+    defaults: { _controller: SetnetJuanMarcetBundle:Menu:mostrarProductos , id_subcategoria: null }

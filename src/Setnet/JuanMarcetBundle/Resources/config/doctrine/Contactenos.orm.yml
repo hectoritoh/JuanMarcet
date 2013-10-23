@@ -1,0 +1,25 @@
+Setnet\JuanMarcetBundle\Entity\Contactenos:
+  type: entity
+  fields:
+    id:
+      id: true
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      nullable: true
+    apellidos:
+      type: string
+      nullable: true
+    email:
+      type: string
+      nullable: true
+    mensaje:
+      type: text
+      nullable: true
+    estado:
+      nullable: true
+    referencia:
+      type: string
+      length: 30
+      nullable: true

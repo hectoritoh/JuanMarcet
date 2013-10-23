@@ -1,0 +1,87 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+{%  block  slider %}
+{%  endblock   %}
+
+
+
+{%  block  contenido_centrado  %}
+<div class="row-fluid" >
+    <div class="span12">
+        <img  style="width: 100%;" src="{{ asset('images/marcadores.png') }}"/>
+    </div>
+</div>
+
+
+
+
+<br/>
+<br/>
+
+
+<div class="row-fluid"  >
+
+
+    <div class="span8" >
+        
+
+        <label class=" menu-noticias-jm">{{  subcategoria.nombre }}    (  {{ subcategoria.producto | length  }} ) </label>
+
+
+
+
+<div  class="subcategorias-holder" >
+
+        {%  for i in 0 .. subcategoria.producto | length / 3  %}
+
+<div  class="subcategorias-row"  style="   {%  if i > 3 %} display:none;  {%  endif %}"  >
+         {{  include('SetnetJuanMarcetBundle:Template:item_producto_jm.html.twig' , {'productos': subcategoria.producto | slice( i * 3 , 3  )  } )  }}
+</div>
+ 
+        {% endfor %}
+</div>        
+        <div class="row-fluid">
+            <div class="span12" style="text-align: center; margin-left: 0px;  padding-bottom: 30px; padding-top: 30px;">
+
+                <a   onclick="verMas();" class="btn btn-navbar" style="color: gray;font-size: 16px;">V e r   M a s   P r o d u c t o s</a>
+            </div>
+            <br/>
+        </div> 
+    </div>
+
+    <div class="span4">
+        <label class="menu-noticias-jm">NOTICIAS</label>
+        <div style="overflow-y: auto; ">
+            
+            {%  for noticia in noticias  %}            
+               {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+            {%  endfor  %}
+            
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<hr style="width: 100%"/> 
+
+<script type="text/javascript">
+
+
+function verMas(){
+
+   $(".subcategorias-holder .subcategorias-row[style*='display:none']:first").show('slow');
+
+}
+
+</script>
+
+{% endblock %} 
+
+
+

@@ -1,0 +1,48 @@
+<div class="span6" style="text-align:center;margin-left: 0px;position: relative;">
+    <div style="margin-bottom: 0px;width: 100%;">
+        <div class="row-fluid ">
+            <div class="span12">
+
+                <div id="myCarousel_p" class="carousel slide">
+              
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                      
+                        <div class="item active"  style="heigth:266px;" >
+                            <img style="position:relative;heigth:256px;"  src="{{  asset('uploads/banner1.jpg') }}" />
+                            <img  style="position:absolute;z-index:100;top:0;heigth:266px;"  src="{{  asset('uploads/productos/' ~  producto.codigo ~ '.jpg') }}" />
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid ">
+            <div class="span12" style="text-align: justify">
+
+<ul>
+
+                    {%  for prod in productos  %}
+                <li>
+                    {{   prod.descripcion }}
+                </li>
+                    {%  endfor   %}
+                    </ul>
+
+            </div>
+        </div>
+            <hr style="width: 100%"/>    
+            <div class="row-fluid ">
+            <label style="text-align: left;font-size: 20px;color: red !important;padding-bottom: 10px;font-family: bebas_neueregular !important;width: 100%;" id="precio">PRODUCTOS RELACIONADOS</label>
+            </div>
+            
+            <!--fila de 4 productos relacionados -->
+                {%  include 'SetnetJuanMarcetBundle:Template:row_producto_re.html.twig' %}
+            <!--columna de descripcion del producto -->
+                {%  include 'SetnetJuanMarcetBundle:Template:row_producto_re.html.twig' %}
+            
+    </div>
+
+</div>

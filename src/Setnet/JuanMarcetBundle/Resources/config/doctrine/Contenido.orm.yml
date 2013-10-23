@@ -1,0 +1,29 @@
+Setnet\JuanMarcetBundle\Entity\Contenido:
+  type: entity
+  table: contenido
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    titulo:
+      type: string
+      length: 255
+      nullable: true
+    contenido:
+      type: text
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+    categoria:
+      type: string
+      length: 100
+      nullable: true

@@ -1,0 +1,42 @@
+Setnet\JuanMarcetBundle\Entity\Compra:
+  type: entity
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+  oneToOne:
+    detalleEnvio:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\DetalleEnvio
+      inversedBy: compra
+      joinColumns:
+        detalle_envio_id:
+          referencedColumnName: id
+          nullable: false
+          unique: true
+    detallePago:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\DetallePago
+      inversedBy: compra
+      joinColumns:
+        detalle_pago_id:
+          referencedColumnName: id
+          nullable: false
+          unique: true
+  manyToOne:
+    usuario:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Usuario
+      inversedBy: compra
+      joinColumns:
+        usuario_id:
+          referencedColumnName: id
+          nullable: false

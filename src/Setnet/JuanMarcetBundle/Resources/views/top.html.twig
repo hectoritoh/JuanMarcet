@@ -1,0 +1,454 @@
+ 
+<div class="navbar navbar-inverse navbar-fixed-top hidden-desktop" > 
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand hidden-desktop" href="#">Juan Marcet</a>
+          <div class="nav-collapse collapse"  style="background-color:#7E1617;">
+            <ul class="nav">
+                <li >
+                    <a class='top-menu-item'  href="{{  path('home') }}"   >INICIO</a>
+                </li>
+                <li>
+                    <a class='top-menu-item'  href="{{  path('about') }}"   >NOSOTROS</a>
+                </li>
+                <li>
+                    <a class='top-menu-item'  href="{{  path('prensa') }}"  >PRENSA</a>
+                </li>
+                <li>
+                    <a class='top-menu-item'  href="{{  path('trabaja_con_nosotros') }}" >TRABAJA CON NOSOTROS</a>
+                </li>
+                <li>
+                    <a class='top-menu-item'  href="{{  path('preguntas') }}"  >PREGUNTAS FRECUENTES</a>
+                </li>
+                <li>
+                    <a class='top-menu-item'   href="{{  path('contactenos') }}" >CONTACTENOS</a>
+                </li>
+                <li>
+                    <a class='top-menu-item'   href="{{  path('contactenos') }}" ></a>
+                </li>
+                <li>
+                    <a class='top-menu-item'   href="{{  path('contactenos') }}" >  <img src="{{ asset('css/img/twitter.png') }}" /> </a>
+                </li>
+                <li>
+                    <a class='top-menu-item'   href="{{  path('contactenos') }}" >   <img src="{{ asset('css/img/facebook.png') }}" /> </a>
+                </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+   
+
+
+<div class="navbar navbar-inverse navbar-fixed-top  hidden-phone" > 
+    <div class="navbar-inner">
+        <div class="container">
+            <div  class="row-fluid" >
+
+                <div  class="span12" >
+
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+
+                    <a class="brand hidden-desktop" href="#">Juan Marcet</a>
+                    
+
+
+                    <div class="nav-collapse collapse  "  >
+                        <ul class="nav">
+                            <li class='top-menu-li-item' >
+                                <a class='top-menu-item'  href="{{  path('home') }}"   >INICIO</a>
+                            </li>
+                            <li  class='top-menu-li-item' >
+                                <a class='top-menu-item'  href="{{  path('about') }}"   >NOSOTROS</a>
+                            </li>
+                            <li  class='top-menu-li-item' >
+                                <a class='top-menu-item'  href="{{  path('prensa') }}"  >PRENSA</a>
+                            </li>
+                            <li   class='top-menu-li-item' >
+                                <a class='top-menu-item'  href="{{  path('trabaja_con_nosotros') }}" >TRABAJA CON NOSOTROS</a>
+                            </li>
+                            <li   class='top-menu-li-item' >
+                                <a class='top-menu-item'  href="{{  path('preguntas') }}"  >PREGUNTAS FRECUENTES</a>
+                            </li>
+                            <li   class='top-menu-li-item' >
+                                <a class='top-menu-item'   href="{{  path('contactenos') }}" >CONTÁCTENOS</a>
+                            </li>
+
+                            <li   class='top-menu-li-item' >
+                                <a class='top-menu-item'   href="{{  path('contactenos') }}" >  <img src="{{ asset('css/img/twitter.png') }}" /> <img src="{{ asset('css/img/facebook.png') }}" />  </a>                       
+
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="submenu hidden-phone" >
+
+
+
+
+    <div class="container">
+        <div class="row-fluid submenu-holder">
+
+
+            <div class="logo-wrapper span3"   >
+                <img  class="imagen-logo" src="{{   asset('images/logo.png') }}" />
+            </div>
+
+            <div  class="span9" >
+
+                <div class="btn-submenu-inner btn-submenu-active" >
+                    <span id="productos-menu" class="btn-submenu-a"  >
+                        PRODUCTOS
+                    </span>
+                </div>
+
+                <div class="btn-submenu-inner "  >
+                    <a class="btn-submenu-a"   href="{{   path('tienda') }}"  >TIENDAS</a>
+                </div>
+
+                <div class="btn-submenu-inner " style="width: 39%;" > 
+                    <input   type="text" style="margin-top: 10px;" placeholder="BUSCAR" />
+                    <a  class="btn-submenu-a" > BUSCAR</a>
+                </div>
+
+                <div  class="btn-submenu-inner  "    >
+                    <a class="btn-submenu-a" >
+                        <img  src='{{   asset('img/cart.png') }}' />               
+                        MI CARRITO
+                    </a>
+                </div>
+
+                <div  class="clearfix" ></div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div  id="submenu-categorias" class="container" style="display:none;"  >
+    <div class="row-fluid ">
+        <div  class="span12" >            
+            <div  class="categoria-wrap" >  
+                
+                {%  for cat in categorias  %}
+                <div  class="categoria-block" >       
+                    <div class="categoria-inner-block" onclick="mostrarSubcategoria( '{{   path("mostrar_subcategoria_list" , {'id_categoria': cat.id }  ) }}'   );" >                    
+                        <a  class="categoria-link  {% if loop.first %} selected {%  endif %}" >{{  cat.nombre }}</a>                    
+                    </div>
+                </div>       
+                {%  endfor %}                                          
+            </div>
+        </div>         
+    </div>
+    <div class="row-fluid ">
+        <div  class="span12" >            
+            <div  class="subcategoria-wrap" >   
+                <div class="subcategoria-wrap-inner"  > 
+                    <div  class="subcategoria-block" >       
+                        <div id="subcategorias-menu" class="subcategoria-inner-block" >  
+                            <ul  class="subcategoria-list" >
+                                <li class="active" >
+                                    <a  class="subcategoria-link" >Subcategoria</a>
+                                </li>
+
+                                <li  >
+                                    <a  class="subcategoria-link" >Subcategoria</a>
+                                </li>
+
+                                <li  >
+                                    <a  class="subcategoria-link" >Subcategoria</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>                                  
+                </div>                                         
+            </div>
+            
+            <div  class="producto-wrap" >   
+                <div class="producto-wrap-inner"  > 
+
+                    <ul id="producto-list" class="producto-list" >
+                        <li class="active" >
+                            <img   class="prod-img" src="http://localhost/JuanMarcet/web/uploads/productos/default.jpg" />                                    
+                            <a  class="producto-link" >Subcategoria</a>
+                        </li>
+                        <li class="active" >
+                            <img class="prod-img" src="http://localhost/JuanMarcet/web/uploads/productos/default.jpg" />                                    
+                            <a  class="producto-link" >Subcategoria</a>
+                        </li>
+                        <li class="active" >
+                            <img class="prod-img" src="http://localhost/JuanMarcet/web/uploads/productos/default.jpg" />                                    
+                            <a  class="producto-link" >Subcategoria</a>
+                        </li>
+                        <li class="active" >
+                            <img class="prod-img" src="http://localhost/JuanMarcet/web/uploads/productos/default.jpg" />                                    
+                            <a  class="producto-link" >Subcategoria</a>
+                        </li>
+                    </ul>
+
+                    
+                    
+                    <div  id="productos-more-wrap" >
+                        <div  class="boton-vermas" >
+                            <a class="boton-vermas-link" >Ver mas productos</a>
+                        </div>
+                    </div>
+
+                </div>                                         
+            </div>            
+        </div>         
+    </div>
+</div>
+
+
+<div class="submenu hidden-phone"  style="display: none;" >
+
+
+
+
+    <div class="container">
+        <div class="row-fluid submenu-holder">
+            <div class="span12">
+                <div    >
+                    <button class="btn btn-large  logo-wrapper"   >
+                        <img  class="imagen-logo" src="{{   asset('images/logo.png') }}" />
+                    </button>
+                    <button class="btn btn-large btn-submenu dropdown-toggle" data-toggle="dropdown"  >PRODUCTOS</button>
+                    <div class="dropdown-menu"   >
+
+                        <div class="row-fluid "  >
+                            <div  class="span12" >
+                                <div id="catSlider" class="carousel slide">
+
+                                    <div class="carousel-inner">
+
+                                        <div class="item active">
+                                            <div class="row-fluid"  >
+
+                                               {%  for cat in categorias  %}
+
+                                                <div class="span2"   >
+                                                    <a href="#x"  style="border-right:1px solid gray;" onmouseover="mostrarTab({{  cat.id }});"   class="thumbnail"> 
+                                                        <p  style="color: black;text-align:center;" >{{  cat.nombre }}</p>
+                                                    </a>
+                                                </div>
+                                                {%  endfor %}
+
+                                            </div><!--/row-fluid-->
+                                        </div><!--/item-->
+
+
+
+
+                                    </div> 
+                                </div><!--/catSlider-->
+
+                            </div>
+
+                        </div>
+
+
+
+
+              {%  for cat in categorias  %}
+
+                        <div class="row-fluid subcategorias-mostrar"  id="submenu-cat{{  cat.id }}"    {%  if not loop.first  %}   style="display: none;" {% endif %}  >
+                            <div  class="span10 offset1" >
+                                <div id="cat{{   cat.id }}" class="carousel slide">
+                                    <div class="carousel-inner">                                                                         
+                                        {%  for i in 0 .. cat.subcategorias | length % 4 %}                                                                
+                                        <div class="item active">                                        
+                                            <div class="row-fluid">                                                   
+                                                    {% for  subcat in cat.subcategorias | slice( i * 4 , 4  )  %}                                                   
+                                                <div class="span3">
+                                                    <a href="{{  path( 'subcategoria' , {id : subcat.id } ) }}" class="thumbnail">
+                                                        <img src="{{  asset('images/jumbo.png') }}" alt="Image" style="max-width:100%;" />
+                                                        <p  style="color: black;" >{{  subcat.nombre }}</p>
+                                                    </a>
+                                                </div>                                                   
+                                                   {%  endfor %}                                                                                                      
+                                            </div> 
+                                        </div> 
+                                        {%  endfor  %}
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+
+
+              {%  endfor  %}      
+
+
+                    </div>
+
+                    <button class="btn btn-large btn-submenu"  >TIENDAS</button>
+                    <div class="btn btn-large btn-submenu busqueda-wrapper" style="width:30%;" > 
+                        <form  action="{{  path('busqueda') }}" method="post" >
+                            <div style="position:relative;" >
+                                <input type="text"  name="buscar" class="busqueda-input" />  
+                                <input type="submit" class="buscar-submit"  value="BUSCAR" />                 
+                            </div> 
+                        </form>
+                    </div>            
+
+                    <button onclick="window.location = '{{  path('cesta') }}'" class="btn btn-large btn-submenu"    >
+                        <img  src='{{   asset('img/cart.png') }}' />               
+                        MI CARRITO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<ul class="nav nav-tabs nav-stacked hidden-desktop " >
+
+    <li>        
+        <a href="" class="fondo_rojo_claro dropdown-toggle" data-toggle="dropdown"  >  Productos </a> 
+        <div class="dropdown-menu" style="width: 100%; position:relative;" >
+
+            <div class="row-fluid "  >
+                <div  class="span12" >
+                    <div id="catSlider" class="carousel slide">
+
+                        <div class="carousel-inner">
+
+                            <div class="item active">
+                                <div class="row-fluid"  >
+
+                                               {%  for cat in categorias  %}
+
+                                    <div class="span2"   >
+                                        <a href="#x"  style="border-right:1px solid gray;" onmouseover="mostrarTabSubmenu({{  cat.id }});"   class="thumbnail"> 
+                                            <p  style="color: black;text-align:center;" >{{  cat.nombre }}</p>
+                                        </a>
+                                    </div>
+                                                {%  endfor %}
+
+                                </div>
+                            </div>
+                        </div> 
+                    </div><!--/catSlider-->
+
+                </div>
+
+            </div>
+
+
+
+
+              {%  for cat in categorias  %}
+
+            <div class="row-fluid subcategorias-mostrar-sub"  id="submenu-cat_sub{{  cat.id }}"    {%  if not loop.first  %}   style="display: none;" {% endif %}  >
+                <div  class="span10 offset1" >
+                    <div id="cat{{   cat.id }}" class="carousel slide">
+                        <div class="carousel-inner">                                                                         
+                                        {%  for i in 0 .. cat.subcategorias | length % 4 %}                                                                
+                            <div class="item active">                                        
+                                <div class="row-fluid">                                                   
+                                                    {% for  subcat in cat.subcategorias | slice( i * 4 , 4  )  %}                                                   
+                                    <div class="span3">
+                                        <a href="{{  path( 'subcategoria' , {id : subcat.id } ) }}" class="thumbnail">
+                                            <img src="{{  asset('images/jumbo.png') }}" alt="Image" style="max-width:100%;" />
+                                            <p  style="color: black;" >{{  subcat.nombre }}</p>
+                                        </a>
+                                    </div>                                                   
+                                                   {%  endfor %}                                                                                                      
+                                </div> 
+                            </div> 
+                                        {%  endfor  %}
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+
+
+              {%  endfor  %}      
+
+
+        </div>
+    </li>
+    <li>        
+        <a href=""  class="fondo_rojo_claro" >  Tiendas </a> 
+    </li>
+    <li>   
+        <a  class="fondo_rojo_claro"  class="padding-top: 3px; padding-bottom: 3px;"  >
+            <form class="form-search"  style="margin-bottom: 5px; margin-top: 5px;" >
+                <input type="text" class="input-medium search-query "  style="width:50%;float:left;" >
+                <button type="submit" style="float:right;" class="btn ">Buscar</button>
+                <div class="clearfix"></div>        
+            </form>
+        </a>
+    </li>
+    <li>        
+        <a href=""  class="fondo_rojo_claro" >  Mi carrito </a> 
+    </li>
+
+
+</ul>
+
+
+
+
+
+
+<script type="text/javascript" >
+
+    function  mostrarTab(id) {
+
+
+        $(".subcategorias-mostrar").hide();
+        $("#submenu-cat" + id).show();
+
+    }
+    function  mostrarTabSubmenu(id) {
+
+
+        $(".subcategorias-mostrar-sub").hide();
+        $("#submenu-cat_sub" + id).show();
+
+    }
+
+
+    $('.dropdown-menu a.removefromcart').click(function(e) {
+        e.stopPropagation();
+    });
+
+
+</script>
+
+</div>

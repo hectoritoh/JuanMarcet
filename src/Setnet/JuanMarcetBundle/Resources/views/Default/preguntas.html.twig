@@ -1,0 +1,79 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+
+{%  block  slider  %}
+{%  endblock   %}
+
+
+
+
+  {% block portada %}
+<div class="row">
+    <div class="portada"   style="background-image:url({{  asset('uploads/banners/banner-preguntas.jpg') }});background-size:100% 100%;"  >
+        <div class="container">
+            <div class="recuadro">
+                <ul class="breadcrumb">
+                    <li><a class="bread" href="#">HOME</a> <span class="divider">></span></li>
+                    <li><a class="bread" href="#">PREGUNTAS</a> <span class="divider">></span></li>
+                    <li class="bread" class="active" style="text-decoration: underline;">  <a  style="  color: #EBC55C;"  href="#">   </a> </li>
+                </ul>
+                <h1 class="title"> PREGUNTAS FRECUENTES </h1>
+                <h2 class="subtitle" ></h2>
+            </div>
+        </div>
+    </div>
+</div>
+     {% endblock %}      
+
+
+{%  block  contenido_centrado  %}
+<br/> 
+<br/> 
+
+<div class="row-fluid"  >
+
+
+    <div class="span8" >
+        <!-- <label class=" menu-noticias-jm">Preguntas Frecuentes</label>
+ -->
+       
+        {%  for contenido in contenidos %}
+   
+        
+        {{   include('SetnetJuanMarcetBundle:Template:contenidoPreguntas.html.twig' , {'contenido': contenido} ) }}
+        <div class="separador"></div>
+        
+        {%  endfor  %}
+        
+    </div>
+    
+    
+    
+
+    <div class="span4">
+        <div class="row-fluid"  >
+            <div class="span2" style="width: 287px; padding-left: 0px; left: 288px;"> 
+                <div class="row" style="margin-left: 0px;margin-top: 20px">
+                    <label class="fondo-text">NOTICIAS</label>
+                </div>
+            </div>
+        </div>
+        <div style="overflow-y: auto; ">
+
+            {%  for noticia in noticias  %}            
+               {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+            {%  endfor  %}
+
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<hr style="width: 100%"/> 
+{% endblock %} 

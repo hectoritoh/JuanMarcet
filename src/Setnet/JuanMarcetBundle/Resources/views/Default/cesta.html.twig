@@ -1,0 +1,59 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+ 
+             {% block slider %} 
+             {% endblock %}
+             
+ 
+
+{%  block contenido %}
+
+
+<div class="row" >
+    <div class="span10 offset2">
+            <div class="row" style="margin-left: 20px;margin-top: 20px">
+                <label class="titulo-contenido">MI CESTA</label>
+            </div>
+            
+          
+                
+            <div class="row" style="margin-left: 20px">
+                
+ 
+                
+                {{  include('SetnetJuanMarcetBundle:Template:item_carrito.html.twig') }}
+                {{  include('SetnetJuanMarcetBundle:Template:item_carrito.html.twig') }}
+                
+           
+                
+                
+                <!-- panel derecho del carrito -->
+                <div class="span2 offset6" style="background-color: #E9F2F6;border:3px solid #D5E4E9;width: 335px; position: absolute; padding-left: 0px; left: 288px; margin-left: 600px;"> 
+                    <div class="row" style="margin-left: 0px;padding:15px;">
+                        <div class="span12" style="background-color: white; margin: 10px 0px; width: 100%;">
+                            <div class="row" style="margin-left: 0px;padding-left: 20px;">
+                                <label class="label_subtitulo-arial" style="margin-left: 0px">Subtotal</label>                              
+                            </div>
+                            <div class="row" style="margin-left: 0px;padding-left: 20px;">
+                                <label style="color: #D3D3D3;font-size: 15px;font-weight: bold;font-family: Arial !important;margin-bottom: 15px;width: 100%;float: left">(2 items seleccionados)</label>
+                            </div>
+                            <div class="row" style="margin-left: 0px;padding-left: 20px;">
+                                <label class="titulo-contenido" style="color: red !important;font-weight: bold;font-family: Arial !important;width: 35%;" id="precio">$355.00</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 0px;padding: 15px;">
+                        <button href="#" class="btn btn-large btn-submenu" style="width: 100%">CONTINUAR EL PROCESO DE COMPRA</button>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <hr style="width: 100%"/>
+
+        </div>
+</div>
+
+<hr style="width: 100%"/> 
+{% endblock %}
+
+

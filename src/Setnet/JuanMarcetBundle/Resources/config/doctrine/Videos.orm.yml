@@ -1,0 +1,32 @@
+Setnet\JuanMarcetBundle\Entity\Videos:
+  type: entity
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    titulo:
+      type: string
+      length: 255
+      nullable: true
+    descripcion:
+      type: text
+      nullable: true
+    created:
+      type: datetime
+      nullable: true
+    updated:
+      type: datetime
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+  manyToOne:
+    multimedia:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Multimedia
+      inversedBy: videos
+      joinColumns:
+        multimedia_id:
+          referencedColumnName: id
+          nullable: false

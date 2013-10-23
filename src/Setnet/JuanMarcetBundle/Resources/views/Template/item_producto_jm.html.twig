@@ -1,0 +1,25 @@
+<div class="row-fluid">
+
+    {%   for  prod in productos  %}
+    <div class="span4" class="producto-block" >
+        <a class="prod-link" href="{{  path('descripcion_producto' , {  'id': prod.id }) }}" >
+            <div  style="position:relative;" >
+                <img style='width:100%;position:relative;' src="{{ asset('uploads/productos/default.jpg' ) }}"/>
+                <img style='z-index:100;top:0;   left: 0; position: absolute;height:100%;' src="{{ asset('uploads/productos/' ~ prod.codigo ~ '.jpg' ) }}"/>
+        </div>
+        <div  style="background-color: red;border-bottom :2px solid #E8ECED;position:relative;" >
+
+        <div  class="vermas-prod" >
+            <p  style="color:white;margin:8px;" >  VER MAS  </p> 
+        </div>
+
+                <h5 style="background-color: red; padding:10px;color: white;font-size:12px;margin:0;text-transform:uppercase;">{{  prod.nombre }}</h5>
+
+                <p style="background-color: red;float: left;font-weight: bold;color:white; padding:10px;margin:0;padding-top:0px;">$30.00 </p>
+                <div  style="clear: both;" ></div>
+        </div>
+    </div><!--/span-->
+</a>
+    {%   endfor  %}
+
+</div>

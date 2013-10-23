@@ -1,0 +1,92 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+
+{%  block  slider  %}
+{%  endblock   %}
+
+
+
+
+
+     {% block portada %}
+<div class="row">
+    <div class="portada"   style="background-image:url({{  asset('uploads/banners/banner_nosotros.jpg') }});background-size:100% 100%;height:370px;" >
+        <div class="container"   >
+            <div class="recuadro"  style="    background-color: rgba(0, 0, 0, 0);" >
+                <ul class="breadcrumb"  style="    background-color: rgba(0, 0, 0, 0);" >
+                    <li><a class="bread" href="#"></a> <span class="divider"></span></li>
+                    <li><a class="bread" href="#"></a> <span class="divider"></span></li>
+                    <li class="bread" class="active" style="text-decoration: underline;">  <a  style="  color: #EBC55C;"  href="#">   </a> </li>
+                </ul>
+                <h1 class="title"> NOSOTROS </h1>
+                <h1 class="subtitle" style="font-weight:normal;color:white;"  >¿QUIENES SOMOS?</h1>
+            </div>
+        </div>
+    </div>
+</div>
+     {% endblock %}         
+
+
+
+{%  block  contenido_centrado  %}
+ 
+<div class="">
+    <div class="span12">
+             <div class="span8" >
+
+                <h3  style="color: red; font-family: bebas_neueregular;" >HISTORIA  </h3>
+
+                <p>
+                    {%  for contenido in contenidos %}
+       
+                    {% if contenido.titulo == 'HISTORIA' %}
+                    {{   contenido.contenido }}
+                    {%  endif %}
+            
+            
+            {%  endfor  %}
+
+                </p>
+
+
+            </div>
+            <div class="span4" >
+                 <img  src="{{ asset('images/monitor.png') }}"/>
+            </div>
+    </div>
+    <div class="row-fluid"  >
+        <div class="span12 " >
+            <!-- <label class=" menu-noticias-jm">Nosotros</label> -->      
+            {%  for contenido in  contenidos  %}
+       
+                  {% if contenido.titulo != 'HISTORIA' %}
+                    {{   include('SetnetJuanMarcetBundle:Template:contenido.html.twig' , {'contenido': contenido} ) }}
+                   {%  endif %}
+            
+            {%  endfor  %}
+            
+        </div>
+        
+        <!-- <div class="span3">
+            <label class="menu-noticias-jm">NOTICIAS</label>
+            <div style="overflow-y: auto; ">
+
+                {%  for noticia in noticias  %}            
+                   {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+                {%  endfor  %}
+
+            </div>
+            <div class="row" style="margin-left: 0px;margin-top: 10px">
+                <div class="span12" style="margin-left: 0px;">
+                    <img  src="{{ asset('images/promocionan.png') }}"/>
+                </div>
+            </div>
+        </div> -->
+
+        <br/>
+    </div>
+</div>
+
+
+<hr style="width: 100%"/> 
+{% endblock %} 

@@ -1,0 +1,9 @@
+
+{%  for producto in subcategoria.producto | slice(0,4) %}
+<li class="active"  id="{{  producto.id }}" >
+	<a href="{{  path('descripcion_producto' , {  'id': producto.id }) }}">
+		<img id="{{  producto.codigo }}" class="prod-img" src="http://localhost/JuanMarcet/web/uploads/productos/default.jpg" />                                    
+		<p  class="producto-link" > {{  producto.nombre }}  </p>
+	</a>
+</li>
+{% endfor %}

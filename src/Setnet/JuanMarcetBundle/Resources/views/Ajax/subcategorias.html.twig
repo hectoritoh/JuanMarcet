@@ -1,0 +1,7 @@
+<ul  class="subcategoria-list" >    
+    {% for subcategoria in categoria.subcategorias %}    
+    <li>
+        <a onclick="mostrarProductos(  '{{   path("mostrar_productos_list" ) }}/{{subcategoria.id}}'  , this )" class="subcategoria-link" >{{  subcategoria.nombre }}</a>
+    </li>    
+    {% endfor %}    
+</ul>

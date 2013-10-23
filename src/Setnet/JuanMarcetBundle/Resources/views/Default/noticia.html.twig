@@ -1,0 +1,65 @@
+{%   extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+
+{%  block  slider  %}
+{%  endblock   %}
+
+{%  block  contenido_centrado  %}
+ 
+<div class="row-fluid"  >
+
+
+    <div class="span8" >
+      <!--   <label class=" menu-noticias-jm">PRENSA</label> -->
+        <div >
+
+            <h3  style="color: red; font-family: arial; text-transform: uppercase;" >{{  selected.titulo }}</h3>
+            <p> {{  selected.created | date( 'Y-m-d H:i:s' ) }} </p>
+            <p> <img  style="width: 100%;" src="{{  asset('uploads/noticias/' ~ selected.imagen ) }}" /> </p>
+
+            <p>
+            {{  selected.descripcion }}
+                </p>
+
+        </div>
+        
+        <hr style="width: 100%;" />
+        
+    
+        
+    </div>
+    
+    
+    
+
+    <div class="span4">
+        <!-- <label class="menu-noticias-jm">NOTICIAS</label>
+        <div style="overflow-y: auto; ">
+
+            {%  for noticia in noticias  %}            
+               {{  include( 'SetnetJuanMarcetBundle:Template:item_noticia_jm.html.twig' , {'noticia': noticia} ) }}
+            {%  endfor  %}
+
+        </div> -->
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+        <div class="row" style="margin-left: 0px;margin-top: 10px">
+            <div class="span12" style="margin-left: 0px;">
+                <img  src="{{ asset('images/promocionan.png') }}"/>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<hr style="width: 100%"/> 
+{% endblock %} 

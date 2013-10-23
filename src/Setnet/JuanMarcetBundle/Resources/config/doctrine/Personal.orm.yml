@@ -1,0 +1,32 @@
+Setnet\JuanMarcetBundle\Entity\Personal:
+  type: entity
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      nullable: true
+    estatura:
+      type: float
+      nullable: true
+    sponsor:
+      type: string
+      length: 255
+      nullable: true
+    anecdota:
+      type: text
+      nullable: true
+    edad:
+      type: integer
+      nullable: true
+    extra1:
+      nullable: true
+    extra2:
+      nullable: true
+  oneToMany:
+    entrevista:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Entrevista
+      mappedBy: persona

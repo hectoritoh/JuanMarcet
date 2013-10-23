@@ -1,0 +1,191 @@
+{% extends "SetnetJuanMarcetBundle::layout.html.twig" %}
+
+{% block slider %} 
+
+{% endblock %}
+
+
+
+
+     {% block portada %}
+<div class="row">
+    <div class="portada"  style="background-image:url({{  asset('uploads/banners/bannr-producto.jpg') }});background-size:100% 100%;"  >
+        <div class="container">
+            <div class="recuadro">
+                <ul class="breadcrumb">
+                    <li><a class="bread" href="#">HOME</a> <span class="divider">></span></li>
+                    <!-- <li><a class="bread" href="#"></a> <span class="divider">></span></li> -->
+                    <li class="bread" class="active" style="text-decoration: underline;">  <a  style="  color: #EBC55C;"  href="{{  path('subcategoria' , { id : producto.subcategoria.id  }) }}">  {{producto.subcategoria.nombre}} </a> </li>
+                </ul>
+                <h1 class="title">{{producto.nombre}}</h1>
+                <h2 class="subtitle" >PRODUCTOS</h2>
+            </div>
+        </div>
+    </div>
+</div>
+     {% endblock %}           
+
+
+
+
+{%  block contenido_centrado %}
+<div class="row-fluid" style="margin-top: 20px;">
+    <div class="span12">
+   
+
+  
+
+
+        <div class="row-fluid"  >
+            <div class="span4 offset7" style=" "> 
+                <div class="row" style="margin-left: 0px;margin-top: 20px">
+                    <label class="fondo-text"  style="padding-right: 0px;" >DATOS DEL PRODUCTO</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row-fluid"  >
+
+
+
+            <div class="span6" style="text-align:center;margin-left: 0px;position: relative;">
+    <div style="margin-bottom: 0px;width: 100%;">
+        <div class="row-fluid ">
+            <div class="span12">
+
+                <div id="myCarousel_p" class="carousel slide">
+              
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                      
+                        <div class="item active"  style="heigth:266px;" >
+                            <img style="position:relative;heigth:256px;"  src="{{  asset('uploads/banner1.jpg') }}" />
+                            <img  style="position:absolute;z-index:100;top:0;heigth:266px;"  src="{{  asset('uploads/productos/' ~  producto.codigo ~ '.jpg') }}" />
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid ">
+            <div class="span12" style="text-align: justify">
+
+<ul>
+
+                    {%  for prod in productos  %}
+                <li>
+                    {{   prod.descripcion }}
+                </li>
+                    {%  endfor   %}
+                    </ul>
+
+            </div>
+        </div>
+            <hr style="width: 100%"/>    
+            <div class="row-fluid ">
+            <label style="text-align: left;font-size: 20px;color: red !important;padding-bottom: 10px;font-family: bebas_neueregular !important;width: 100%;" id="precio"> 
+            
+    </div>
+
+</div>
+
+
+
+
+      
+
+
+            <br/>
+
+        </div>
+
+
+
+
+
+            <div class="span4 offset1" style="padding-left: 0px; "> 
+
+                <div class="row" style="margin-left: 0px;padding:15px; background-color: #E9F2F6;border:3px solid #D5E4E9;">
+                    <div class="span12" style="background-color: white; margin: 10px 0px; width: 100%;">
+                        <div class="row" style="margin-left: 0px;padding-left: 20px;padding-top: 20px;">
+                            <label style="font-size: 25px !important;color: black !important;font-weight: bold;font-family: Arial !important;width: 35%;float: left" id="precio_pro">$355.00</label>
+                            <label class="label_iva">incluida IVA</label>
+                        </div>
+                        <div style="clear: both"></div>
+                        <div class="row" style="margin-left: 0px;padding-left: 20px;">
+                            <label class="label_subtitulo-arial" style="font-weight: bold;font-size: 12px !important;margin-left: 0px">Disponibles en:</label>                              
+                        </div>
+                        <div class="row" style="margin-left: 0px;padding-left: 20px;">
+                            <label style="color: #149bdf;font-size: 10px;font-weight: bold;font-family: Arial !important;margin-bottom: 15px;width: 100%;float: left">Centro, Kennedy, Alborada, Riocentro ceibos,</label>
+                        </div>
+                        <div class="row" style="margin-left: 0px;padding-left: 15px;padding-right: 15px;margin-bottom:16px;">
+                            <a  href="{{  path('agregar' , {'id_producto': producto.id}) }}" >
+                            <button href="#" class="btn btn-danger" style="width: 100%">AÑADIR A MI CESTA  <img  src="{{ asset('images/icono-basket.png') }}"/></button>
+                            </a>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left: 0px;padding-top: 20px;">
+                            <button href="#" class="btn" style="font-weight: bold;font-size: 11px;float: left"><img  src="{{ asset('images/corazon.png') }}"/> FAVORITO </button>
+                            <label style="font-size: 11px;font-weight: bold;font-family: Arial !important;width: 56%;float: left;padding-top:5px;padding-left:20px;">12384 Visitas - 532 Favoritos</label>
+                        </div>    
+
+                        <div class="row" style="margin-left: 0px;text-align:center;padding-top: 20px;">
+                            <div class="fb_share pull-left">
+                                <div style="float:left;margin-top:-2px;">
+                                    <b:if cond='data:post.isFirstPost'> 
+                                        <script>(function(d) {
+                                                var js, id = 'facebook-jssdk';
+                                                if (d.getElementById(id)) {
+                                                    return;
+                                                }
+                                                js = d.createElement('script');
+                                                js.id = id;
+                                                js.async = true;
+                                                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                                d.getElementsByTagName('head')[0].appendChild(js);
+                                            }(document));</script>
+                                        </b:if> 
+                                        <fb:share-button expr:href='data:post.url' type='button_count'/>  
+                                    </div>
+
+                                </div>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-via="sergio_chicho10" data-lang="es">Twittear</a>
+                                <script>!function(d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                        if (!d.getElementById(id)) {
+                                            js = d.createElement(s);
+                                            js.id = id;
+                                            js.src = p + '://platform.twitter.com/widgets.js';
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }
+                                    }(document, 'script', 'twitter-wjs');</script>
+
+                    </div>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="row" style="margin-left: 0px;padding: 15px;">
+                        <img  src="{{ asset('images/promocionan.png') }}"/>    
+                    </div>
+                </div>
+
+            </div>
+
+
+
+    </div>
+
+    <hr style="width: 100%"/> 
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+{% endblock %}
+ 

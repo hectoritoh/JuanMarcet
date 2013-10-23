@@ -1,0 +1,29 @@
+Setnet\JuanMarcetBundle\Entity\Entrevista:
+  type: entity
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    pregunta:
+      type: text
+      nullable: true
+    respuesta:
+      type: text
+      nullable: true
+    estado:
+      type: integer
+      nullable: true
+    created:
+      nullable: true
+    updated:
+      nullable: true
+  manyToOne:
+    persona:
+      targetEntity: Setnet\JuanMarcetBundle\Entity\Personal
+      inversedBy: entrevista
+      joinColumns:
+        personal_id:
+          referencedColumnName: id
+          nullable: false

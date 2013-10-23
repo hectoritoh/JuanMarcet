@@ -1,0 +1,195 @@
+<?php
+
+namespace Setnet\JuanMarcetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Entrevista
+ */
+class Entrevista
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $pregunta;
+
+    /**
+     * @var string
+     */
+    private $respuesta;
+
+    /**
+     * @var integer
+     */
+    private $estado;
+
+    /**
+     * @var string
+     */
+    private $created;
+
+    /**
+     * @var string
+     */
+    private $updated;
+
+    /**
+     * @var \Setnet\JuanMarcetBundle\Entity\Personal
+     */
+    private $persona;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set pregunta
+     *
+     * @param string $pregunta
+     * @return Entrevista
+     */
+    public function setPregunta($pregunta)
+    {
+        $this->pregunta = $pregunta;
+    
+        return $this;
+    }
+
+    /**
+     * Get pregunta
+     *
+     * @return string 
+     */
+    public function getPregunta()
+    {
+        return $this->pregunta;
+    }
+
+    /**
+     * Set respuesta
+     *
+     * @param string $respuesta
+     * @return Entrevista
+     */
+    public function setRespuesta($respuesta)
+    {
+        $this->respuesta = $respuesta;
+    
+        return $this;
+    }
+
+    /**
+     * Get respuesta
+     *
+     * @return string 
+     */
+    public function getRespuesta()
+    {
+        return $this->respuesta;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param integer $estado
+     * @return Entrevista
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+    
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return integer 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set created
+     *
+     * @param string $created
+     * @return Entrevista
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return string 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param string $updated
+     * @return Entrevista
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return string 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set persona
+     *
+     * @param \Setnet\JuanMarcetBundle\Entity\Personal $persona
+     * @return Entrevista
+     */
+    public function setPersona(\Setnet\JuanMarcetBundle\Entity\Personal $persona)
+    {
+        $this->persona = $persona;
+    
+        return $this;
+    }
+
+    /**
+     * Get persona
+     *
+     * @return \Setnet\JuanMarcetBundle\Entity\Personal 
+     */
+    public function getPersona()
+    {
+        return $this->persona;
+    }
+}

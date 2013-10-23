@@ -1,0 +1,69 @@
+Setnet\JuanMarcetBundle\Entity\TrabajaConNosotros:
+  type: entity
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+    cedula:
+      type: string
+      length: 10
+      nullable: false
+    apellidos:
+      type: string
+      length: 50
+      nullable: false
+    nombres:
+      type: string
+      length: 50
+      nullable: false
+    nacimiento:
+      type: datetime
+      nullable: false
+    genero:
+      type: string
+      length: 1
+      nullable: false
+    nacionalidad:
+      type: string
+      length: 1
+      nullable: false
+    direccion:
+      type: text
+      nullable: false
+    celular:
+      type: string
+      length: 12
+      nullable: false
+    fijo:
+      type: string
+      length: 12
+      nullable: false
+    email:
+      type: string
+      length: 30
+      nullable: false
+    areaAplica:
+      type: string
+      length: 20
+      nullable: false
+    nivelAplica:
+      type: string
+      length: 30
+      nullable: false
+    estadoCivil:
+      type: string
+      length: 1
+      nullable: false
+    contactoEmergencia:
+      type: string
+      length: 20
+      nullable: false
+    telelfonoEmergencia:
+      type: string
+      length: 20
+      nullable: false
+    estado:
+      type: integer
+      nullable: false

@@ -1,0 +1,78 @@
+services:
+  
+  sonata.admin.banner:
+    class: Setnet\JuanMarcetBundle\Admin\BannerAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Banner, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Categoria, label: Banner }
+  
+  sonata.admin.noticias:
+    class: Setnet\JuanMarcetBundle\Admin\NoticiasAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Noticias, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Categoria, label: Noticias }
+
+  sonata.admin.categoria:
+    class: Setnet\JuanMarcetBundle\Admin\CategoriaAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Categoria, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Categoria, label: Categorias }
+
+  sonata.admin.subcategoria:
+    class: Setnet\JuanMarcetBundle\Admin\SubcategoriaAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Subcategoria, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Categoria, label: Subcategoria }
+
+
+  sonata.admin.producto:
+    class: Setnet\JuanMarcetBundle\Admin\ProductoAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Producto, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Categoria, label: Productos }
+
+
+ 
+
+
+  sonata.admin.contenido:
+    class: Setnet\JuanMarcetBundle\Admin\ContenidoAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Contenido, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Sitio, label: Contenido }
+
+
+ 
+        
+        
+  sonata.admin.usuario:
+    class: Setnet\JuanMarcetBundle\Admin\UsuarioAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Usuario, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Usuario, label: Usuario }
+        
+        
+  sonata.admin.rol:
+    class: Setnet\JuanMarcetBundle\Admin\RolAdmin
+    arguments: [null, Setnet\JuanMarcetBundle\Entity\Rol, 'SonataAdminBundle:CRUD']
+    calls:
+        - [setTranslationDomain, [SetnetAdminBundle]]
+    tags:
+        - { name: sonata.admin, manager_type: orm, group: Seguridad, label: Roles}
+        
+        
+ 
